@@ -53,7 +53,15 @@ async def create_upload_file (file : UploadFile = File(...)):
     img.save(generated_name)
     file1.close()
 
-    loaded_m = load_model('VGG.h5')
+    loaded_m = tf.keras.applications.vgg16.VGG16(
+        include_top=True,
+        weights='imagenet',
+        input_tensor=None,
+        input_shape=None,
+        pooling=None,
+        classes=1000,
+        classifier_activation='softmax'
+    )
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
