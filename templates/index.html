@@ -5,8 +5,9 @@
 </head>
 <body>
 
-<h1>Image classification</h1>
+<h1>Image classification of animals and objects</h1>
   <p>Please upload only jpg, jpeg and png files.</p>
+  <p>VGG16 model is trained on imagenet dataset. There are 1000 classes. This model will predict to which class you image belongs most likely.</p>
 <form method="POST" action = "http://127.0.0.1:8000/uploadfile/image" enctype="multipart/form-data">
   <input type="file" name = "file">
   <button type="submit">Submit</button>
